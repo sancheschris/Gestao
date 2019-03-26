@@ -15,5 +15,17 @@ namespace SeedAPI.Models
         }
 
         public DbSet<SeedAPI.Model.Usuario> Usuario { get; set; }
+
+        public DbSet<SeedAPI.Model.Curso> Curso { get; set; }
+
+        public DbSet<SeedAPI.Model.Disciplina> Disciplina { get; set; }
+
+        public DbSet<SeedAPI.Model.CursoDisciplina> CursoDisciplina { get; set; }
+
+        public DbSet<SeedAPI.Model.PlanoDeAula> PlanoDeAula { get; set; }
+
+        public DbSet<SeedAPI.Model.PlanoDeEnsino> PlanoDeEnsino { get; set; }
+
+        public DbSet<SeedAPI.Model.Turma> Turma { get; set; }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SeedAPI.Models;
 
 namespace SeedAPI.Migrations
 {
     [DbContext(typeof(SeedAPIContext))]
-    partial class SeedAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20190326192930_v0")]
+    partial class v0
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

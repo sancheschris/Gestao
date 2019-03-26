@@ -12,5 +12,16 @@ namespace SeedAPI.Model
         public int PlanoDeEnsinoId { get; set; }
         public string Descricao { get; set; }
         public Disciplina Disciplina { get; set; }
+
+        public PlanoDeEnsino()
+        {
+
+        }
+        public PlanoDeEnsino(int planoDeEnsinoId, string descricao, Disciplina disciplina)
+        {
+            PlanoDeEnsinoId = planoDeEnsinoId;
+            Descricao = descricao;
+            Disciplina = disciplina;
+        }
     }
 }

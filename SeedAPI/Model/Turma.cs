@@ -15,5 +15,18 @@ namespace SeedAPI.Model
         public int CursoDisciplinaId { get; set; }
         public CursoDisciplina CursoDisciplina { get; set; }
         public PlanoDeAula PlanoDeAula { get; set; }
+
+        public Turma()
+        {
+
+        }
+        public Turma(int turmaId, Usuario professor, int cursoDisciplinaId, CursoDisciplina cursoDisciplina, PlanoDeAula planoDeAula)
+        {
+            TurmaId = turmaId;
+            Professor = professor;
+            CursoDisciplinaId = cursoDisciplinaId;
+            CursoDisciplina = cursoDisciplina;
+            PlanoDeAula = planoDeAula;
+        }
     }
 }

@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190326173223_v0.cs" />
+    <Compile Remove="Migrations\20190326173223_v0.Designer.cs" />
+    <Compile Remove="Migrations\20190326192504_initial.cs" />
+    <Compile Remove="Migrations\20190326192504_initial.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Model\ViewModel\" />
     <Folder Include="Services\" />
     <Folder Include="wwwroot\" />
