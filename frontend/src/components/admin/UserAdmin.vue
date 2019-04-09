@@ -7,6 +7,7 @@
                     <b-form-group label="Nome:" label-for="user-name">
                         <b-form-input id="user-name" type="text"
                             v-model="user.nome" required 
+                            :readonly="mode === 'remove'"
                             placeholder="Informe o Nome do Usuário..."/>
                     </b-form-group>
                 </b-col>
@@ -21,7 +22,7 @@
             <b-form-checkbox id="user-admin" v-model="user.privilegio" class="mt-3 mb-3" >
                 Administrador?
             </b-form-checkbox>      
-            <b-row>
+            <b-row v-show="mode === 'save'">
                 <b-col md="6" sm="12">
                     <b-form-group label="Senha:" label-for="user-password">
                         <b-form-input id="user-password" type="password"
