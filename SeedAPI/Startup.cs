@@ -38,7 +38,7 @@ namespace SeedAPI
                 options.AddPolicy(MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("http://localhost/8080", "http://localhost/8080/admin")
+                          builder.WithOrigins("http://localhost/8080", "http://localhost/8080/admin", "http://localhost:8080/auth")
                           .AllowAnyHeader()
                           .AllowAnyMethod()
                           .AllowAnyOrigin()

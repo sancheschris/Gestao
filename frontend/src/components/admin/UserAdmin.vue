@@ -21,6 +21,12 @@
             </b-row>
             <b-form-checkbox id="user-admin" v-model="user.privilegio" class="mt-3 mb-3" >
                 Administrador?
+            </b-form-checkbox> 
+            <b-form-checkbox id="user-coord" v-model="user.Titulacao" class="mt-3 mb-3" >
+                Coordenador?
+            </b-form-checkbox> 
+            <b-form-checkbox id="user-Prof" v-model="user.titulacao" class="mt-3 mb-3" >
+                Professor?
             </b-form-checkbox>      
             <b-row v-show="mode === 'save'">
                 <b-col md="6" sm="12">
@@ -44,7 +50,7 @@
                 @click="remove">Excluir</b-button>
             <b-button class="ml-2" @click="reset">Cancelar</b-button>
         </b-form>
-        <hr>
+        <hr> 
         <b-table hover striped :items="users" :fields="fields">
             <template slot="actions" slot-scope="data">
                 <b-button variant="warning" @click="loadUser(data.item)" class="mr-2">
@@ -60,7 +66,6 @@
 
 <script>
 import  { baseURL, showError }  from '@/global'
-
 import axios from 'axios'
 
 export default {
@@ -77,13 +82,17 @@ export default {
                 { key: 'email', label: 'E-mail', sortable: true },
                 { key: 'privilegio', label: 'Administrador', sortable: true,
                     formatter: value => value ? 'Sim' : 'Não' },
+                { key: 'titulacao', label: 'Coordenador', sortable: true,
+                    formatter: value => value ? 'Sim' : 'Não' },
+                { key: 'titulacao', label: 'Professor', sortable: true,
+                    formatter: value => value ? 'Sim' : 'Não' },
                 { key: 'actions', label: 'Ações' }
             ]
         }
     },
     methods: {
         loadUsers() {
-            const url = `${baseURL}/usuarios`
+            const url = `${baseURL}/Usuarios`
             axios.get(url).then(res => {
                 this.users = res.data
                 console.log(this.users)
@@ -97,7 +106,7 @@ export default {
         save() {
             const method = this.user.usuarioId ? 'put' : 'post'
             const usuarioId = this.user.usuarioId ? `/${this.user.usuarioId}` : ''
-            axios[method](`${baseURL}/usuarios${usuarioId}`, this.user)
+            axios[method](`${baseURL}/Usuarios${usuarioId}`, this.user)
                 .then(() => {
                     this.$toasted.global.defaultSuccess()
                     this.reset()
@@ -105,8 +114,8 @@ export default {
                 .catch(showError)
         },
         remove() {
-            const usuarioId = this.user.usaurioId
-            axios.delete(`${baseURL}/usuarios/${usuarioId}`)
+            const usuarioId = this.user.usuarioId
+            axios.delete(`${baseURL}/Usuarios/${usuarioId}`)
                 .then(() => {
                     this.$toasted.global.defaultSuccess()
                     this.reset()

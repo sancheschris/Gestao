@@ -27,5 +27,7 @@ namespace SeedAPI.Models
         public DbSet<SeedAPI.Model.PlanoDeEnsino> PlanoDeEnsino { get; set; }
 
         public DbSet<SeedAPI.Model.Turma> Turma { get; set; }
+
+        public DbSet<SeedAPI.Model.Login> LoginViewModels { get; set; }
     }
 }

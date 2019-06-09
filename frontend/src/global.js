@@ -1,5 +1,10 @@
 import Vue from 'vue'
 
+export const baseURL = 'https://localhost:44373/api'
+export const userKey = '_USER'
+
+
+
 export function showError(e) {
     if(e && e.response && e.response.data) {
         Vue.toasted.global.defaultError({ msg : e.response.data })
@@ -10,6 +15,5 @@ export function showError(e) {
     }
 }
 
-export const baseURL = 'https://localhost:44373/api'
+export default { baseURL, showError, userKey }
 
-export default { baseURL, showError }
